@@ -16,7 +16,16 @@
                 <td>{log.state}</td>
                 <td>{log.weight}</td>
                 <td>{log.recordedAt.getDate()} {log.recordedAt.getMonth()} {log.recordedAt.getYear()}</td>
-                <td><button>Edit</button><button>Delete</button></td>
+                <td>
+                    <form method="POST" action="?/edit">
+                        <input name="id" type="hidden" value={log.id}/>
+                        <button>Edit</button>
+                    </form>
+                    <form method="POST" action="?/delete">
+                        <input name="id" type="hidden" value={log.id}/>
+                        <button>Delete</button>
+                    </form>
+                </td>
             </tr>
         {/each}
     {/if}
