@@ -11,7 +11,7 @@ datasource db {
 }
 
 model logs {
-  id         Int      @id @default(autoincrement())
+  id         String      @id @default(uuid())
   state      String
   weight     Float
   recordedAt DateTime @default(now())
