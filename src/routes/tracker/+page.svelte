@@ -9,12 +9,16 @@
 <h1>Tracker</h1>
 <form method="POST" action="?/create">
     <select name="state" placeholder="Bulking">
-        <option value="bulking">Bulking</option>
-        <option value="shredding">Shredding</option>
-        <option value="maintenance">Maintenance</option>
+        <option value="Bulking">Bulking</option>
+        <option value="Shredding">Shredding</option>
+        <option value="Maintenance">Maintenance</option>
       </select>
     <input name="weight" placeholder="Weight" value=90/>
     <button action="submit">Log</button>
 </form>
 
-<LogCard {logs} />
+{#if logs != null}
+    {#each logs as log}
+        <LogCard {log} />  
+    {/each}
+{/if}
