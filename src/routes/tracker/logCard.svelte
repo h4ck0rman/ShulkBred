@@ -1,32 +1,36 @@
 <script>
-    export let logs;
-    const logs2 = logs;
+    export let log;
+    
+    let edit = false;
+    const toggleEdit = () => {
+        edit = !edit;
+    }
+
 </script>
 
-<table >
-    <tr>
-      <th>State</th>
-      <th>Weight</th>  
-      <th>Date</th>
-      <th>Actions</th>
-    </tr>
-    {#if logs2 != null}
-        {#each logs2 as log}
-            <tr>
-                <td>{log.state}</td>
-                <td>{log.weight}</td>
-                <td>{log.recordedAt.getDate()} {log.recordedAt.getMonth()} {log.recordedAt.getYear()}</td>
-                <td>
-                    <form method="POST" action="?/edit">
-                        <input name="id" type="hidden" value={log.id}/>
-                        <button>Edit</button>
-                    </form>
-                    <form method="POST" action="?/delete">
-                        <input name="id" type="hidden" value={log.id}/>
-                        <button>Delete</button>
-                    </form>
-                </td>
-            </tr>
-        {/each}
-    {/if}
-  </table>
+{#if edit}
+    <form method="POST" action="?/edit">
+        <select name="state" placeholder={log.state}>
+            <option value="Bulking">Bulking</option>
+            <option value="Shredding">Shredding</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+        <input name="weight" placeholder="Weight" value={log.weight}/>
+        <input name="id" type="hidden" value={log.id}/>
+        <button action="submit">&#111;</button>
+    </form>
+    <button on:click={toggleEdit}>&#120;</button>
+
+{:else}
+
+    {log.state}
+    {log.weight}
+    {log.recordedAt}
+    <button on:click={toggleEdit}>&#128393;</button>
+    <form method="POST" action="?/delete">
+        <input name="id" type="hidden" value={log.id}/>
+        <button>&#128465</button>
+    </form>
+        
+
+{/if}
