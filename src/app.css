@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navButton {
+    @apply py-3 px-6 mr-1 rounded-full hover:bg-pink-300 hover:opacity-75
+}
