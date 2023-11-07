@@ -9,6 +9,7 @@
 </script>
 
 {#if edit}
+
     <div>
         <form method="POST" action="?/edit">
             <select name="state" placeholder={log.state}>
