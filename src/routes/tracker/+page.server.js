@@ -1,7 +1,7 @@
 import prisma from '$lib/db.server'
 import { fail } from '@sveltejs/kit';
 
-const states = ['Shredding', 'Bulking', 'Maintenenance']
+const states = ['Shredding', 'Bulking', 'Maintenance']
 
 const uuid_regex = new RegExp('^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')
 
