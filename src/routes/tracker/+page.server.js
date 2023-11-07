@@ -18,8 +18,8 @@ export const actions = {
 
 	create: async ({ request }) => {
         const data = await request.formData();
-        const state = data.get('state');
-        const weight = data.get('weight');
+        let state = data.get('state');
+        let weight = data.get('weight');
 
         // Check for null parameters
         if (state == null || weight == null) {

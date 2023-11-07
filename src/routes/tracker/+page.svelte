@@ -7,15 +7,20 @@
 </script>
 
 <h1>Tracker</h1>
-<form method="POST" action="?/create">
-    <select name="state" placeholder="Bulking">
-        <option value="Bulking">Bulking</option>
-        <option value="Shredding">Shredding</option>
-        <option value="Maintenance">Maintenance</option>
-      </select>
-    <input name="weight" placeholder="Weight" value=90/>
-    <button action="submit">Log</button>
-</form>
+<div>
+    <form method="POST" action="?/create">
+        <select name="state" placeholder="Bulking">
+            <option value="Bulking">Bulking</option>
+            <option value="Shredding">Shredding</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+        <input name="weight" placeholder="Weight" value=90/>
+        <button action="submit">
+            Log
+        </button>
+    </form>
+</div>
+
 
 {#if logs != null}
     {#each logs as log}
