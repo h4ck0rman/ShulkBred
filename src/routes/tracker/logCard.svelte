@@ -9,17 +9,20 @@
 </script>
 
 {#if edit}
-    <form method="POST" action="?/edit">
-        <select name="state" placeholder={log.state}>
-            <option value="Bulking">Bulking</option>
-            <option value="Shredding">Shredding</option>
-            <option value="Maintenance">Maintenance</option>
-          </select>
-        <input name="weight" placeholder="Weight" value={log.weight}/>
-        <input name="id" type="hidden" value={log.id}/>
-        <button action="submit">&#111;</button>
-    </form>
-    <button on:click={toggleEdit}>&#120;</button>
+    <div>
+        <form method="POST" action="?/edit">
+            <select name="state" placeholder={log.state}>
+                <option value="Bulking">Bulking</option>
+                <option value="Shredding">Shredding</option>
+                <option value="Maintenance">Maintenance</option>
+              </select>
+            <input name="weight" placeholder="Weight" value={log.weight}/>
+            <input name="id" type="hidden" value={log.id}/>
+            <button action="submit">&#111;</button>
+        </form>
+        <button on:click={toggleEdit}>&#120;</button>
+    </div>
+    
 
 {:else}
 
