@@ -29,7 +29,7 @@
 
 
 <div class="container mx-auto flex justify-center m-1 bg-pink-300 border-b-2 border-pink-300">  
-    <div class="mx-5 px-6 container mx-auto flex justify-start font-bold">State</div>  
+    <div class=" px-6 container mx-auto flex justify-start font-bold">State</div>  
     <div class="px-6 font-bold">Weight</div>
     <div class="px-6 font-bold">Date</div>
     <div class="mx-2 px-6 font-bold">Actions</div>
